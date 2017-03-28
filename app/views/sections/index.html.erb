@@ -14,8 +14,6 @@
       <th>#</th>
       <th>Section</th>
       <th>Visible</th>
-      <th>Content Type</th>
-      <th>Content</th>
       <th>Page ID</th>
       <th>Actions</th>
     </tr>
@@ -24,8 +22,6 @@
       <td><%= section.position %></td>
       <td><%= section.name %></td>
       <td class="center"><%= section.visible ? 'Yes' : 'No' %></td>
-      <td class="center"><%= section.content_type %></td>
-      <td class="center"><%= section.content %></td>
       <td class="center"><%= section.page_id %></td>
       <td class="actions">
         <%= link_to("Show", section_path(section), :class => 'action show') %>
