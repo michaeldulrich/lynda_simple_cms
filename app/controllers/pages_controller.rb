@@ -43,12 +43,12 @@ class PagesController < ApplicationController
     @page = Page.find(params[:id])
     @page.destroy
     flash[:notice] = "The page '#{@page.name}' was deleted successfully."
-    redirect_to(pages_path)  
+    redirect_to(pages_path)
   end
 
   private
 
   def page_params
-    params.require(:page).permit(:name, :permalink, :visible, :position)
+    params.require(:page).permit(:subject_id, :name, :permalink, :visible, :position)
   end
 end
