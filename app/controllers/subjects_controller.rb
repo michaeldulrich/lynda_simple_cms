@@ -1,4 +1,6 @@
 class SubjectsController < ApplicationController
+
+  layout 'admin'
   def index
     @subjects = Subject.sorted
   end
@@ -8,7 +10,7 @@ class SubjectsController < ApplicationController
   end
 
   def new
-    @subject = Subject.new
+    @subject = Subject.new({:name => 'Default'})
     # you could put a default value after .new, like Subject.new({:name => 'Default'})
   end
 
