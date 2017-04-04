@@ -10,6 +10,7 @@
       <th>Visible</th>
       <th>Permalink</th>
       <th>Subject ID</th>
+      <th>Sections</th>
       <th>Actions</th>
     </tr>
     <% @pages.each do |page| %>
@@ -19,6 +20,7 @@
       <td class="center"><%= status_tag(page.visible) %></td>
       <td class="center"><%= page.permalink %></td>
       <td class="center"><%= page.subject_id %></td>
+      <td class="center"><%= page.sections.size %></td>
       <td class="actions">
         <%= link_to("Show", page_path(page), :class => 'action show') %>
         <%= link_to("Edit", edit_page_path(page), :class => 'action edit') %>
