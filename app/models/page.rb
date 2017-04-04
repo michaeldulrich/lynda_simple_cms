@@ -10,5 +10,12 @@ class Page < ApplicationRecord
   scope :newest_first, lambda { order("created_at DESC") }
   scope :search, lambda { |query| where(["name LIKE ?", "%#{query}%"] ) }
 
-
+  validates_presence_of :name
+  validates_length_of :name, :maximum => 255
+  validates_presence_of :permalink
+  validates_length_of :permalink, :within => 3..255
+  # use presence_of with length_of to disallow spaces
+  validates_uniqueness_of :permalink
+  # for unique values by subject use ":scope => :subject_id"
+  
 end
