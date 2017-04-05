@@ -1,6 +1,6 @@
 class SubjectsController < ApplicationController
 
-
+  before_action :confirm_logged_in
   before_action :count_subjects, :only => [:new, :create, :edit, :update]
 
   layout 'admin'
