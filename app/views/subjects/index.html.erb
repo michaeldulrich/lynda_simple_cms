@@ -1,4 +1,5 @@
 <% @page_title = "All Subjects" %>
+<%= link_to("<< Back to Menu", access_menu_path, :class => 'back-link') %>
 <div class="subjects index">
   <h2>Subjects</h2>
   <%= image_tag('plus_sign.png', :size => '11x11', :alt => '+') %>
@@ -19,6 +20,7 @@
       <td class="center"><%= status_tag(subject.visible) %></td>
       <td class="center"><%= subject.pages.size %></td>
       <td class="actions">
+        <%= link_to("View Pages", pages_path(:subject_id => subject.id), :class => 'action show') %>
         <%= link_to("Show", subject_path(subject), :class => 'action show') %>
         <%= link_to("Edit", edit_subject_path(subject), :class => 'action edit') %>
         <%= link_to("Delete", delete_subject_path(subject), :class => 'action delete') %>

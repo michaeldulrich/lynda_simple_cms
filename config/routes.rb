@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  root 'demo#index'
+  root :to => 'public#index'
+
+  get 'show/:permalink', :to => 'public#show', :as => 'public_show'
 
   get 'admin', :to => 'access#menu'
   get 'access/menu'
@@ -21,6 +23,12 @@ Rails.application.routes.draw do
   end
 
   resources :sections do
+    member do
+      get :delete
+    end
+  end
+
+  resources :admin_users, :except => [:show] do
     member do
       get :delete
     end
