@@ -1,5 +1,7 @@
 class Page < ApplicationRecord
 
+  acts_as_list :scope => :subject
+
   belongs_to :subject #, {:optional => true}
   has_many :sections
   has_and_belongs_to_many :admin_users
@@ -17,5 +19,5 @@ class Page < ApplicationRecord
   # use presence_of with length_of to disallow spaces
   validates_uniqueness_of :permalink
   # for unique values by subject use ":scope => :subject_id"
-  
+
 end
